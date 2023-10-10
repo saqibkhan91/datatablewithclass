@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Button Example</title>
+  <style>
+    .content {
+      display: none;
+    }
+
+    .active {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <button onclick="showContent('option1')">Option 1</button>
+  <button onclick="showContent('option2')">Option 2</button>
+
+  <div id="option1Content" class="content">
+    <!-- Option 1 code goes here -->
+    <h1>Option 1 Content</h1>
+    <p>This is the content for Option 1.</p>
+  </div>
+
+  <div id="option2Content" class="content">
+    <!-- Option 2 code goes here -->
+    <h1>Option 2 Content</h1>
+    <p>This is the content for Option 2.</p>
+  </div>
+
+  <script>
+    function showContent(option) {
+      var option1Content = document.getElementById('option1Content');
+      var option2Content = document.getElementById('option2Content');
+
+      // Hide all content divs
+      var contents = document.getElementsByClassName('content');
+      for (var i = 0; i < contents.length; i++) {
+        contents[i].style.display = 'none';
+      }
+
+      // Show the selected content div
+      if (option === 'option1') {
+        option1Content.style.display = 'block';
+      } else if (option === 'option2') {
+        option2Content.style.display = 'block';
+      }
+    }
+  </script>
+</body>
+</html>
